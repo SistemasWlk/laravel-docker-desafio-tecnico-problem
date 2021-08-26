@@ -66,4 +66,13 @@ Acessa um navegador e digita as seguintes url
 - http://localhost:8001/: phpMyAdmin 
 - http://localhost:8000/: Desafio Técnico 
 
+## Aceesso ao Banco
+
+- DB_CONNECTION=mysql
+- DB_HOST=mysql-laravel-docker-desafio-tecnico
+- DB_PORT=3306
+- DB_DATABASE=desafiotecnicofacilitaapp
+- DB_USERNAME=root
+- DB_PASSWORD=laravel
+
 
