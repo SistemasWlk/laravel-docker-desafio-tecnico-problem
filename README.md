@@ -31,22 +31,28 @@ root@577187a1bdd4# docker-compose up -d --build
 - Logo em seguida no direóro raiz do projeto execute o compser install
 
 ```
-root@577187a1bdd4# composer install
-```
-
-- Altere a permissão da pasta storage/
-
-```
 root@577187a1bdd4# chmod 777 storage/ -R
 ```
 
-- Crie o arquivo de conviguração .env
+- Verifique se os conteines subiram
 
 ```
-root@577187a1bdd4# cp -v .envexemplo .env
+root@577187a1bdd4# docker ps
+
+CONTAINER ID   IMAGE                                                                           COMMAND                  CREATED         STATUS         PORTS                                            NAMES
+1fd8cb9127c1   phpmyadmin/phpmyadmin:latest                                                    "/docker-entrypoint.…"   4 minutes ago   Up 4 minutes   0.0.0.0:8001->80/tcp, :::8001->80/tcp            laravel-docker-desafio-tecnico-problem_phpmyadmin-app-laravel-docker-desafio-tecnico_1
+050d5e64e543   laravel-docker-desafio-tecnico-problem_web-app-laravel-docker-desafio-tecnico   "/bin/bash /run.sh"      4 minutes ago   Up 4 minutes   443/tcp, 0.0.0.0:8000->80/tcp, :::8000->80/tcp   laravel-docker-desafio-tecnico-problem_web-app-laravel-docker-desafio-tecnico_1
+227d535dc0b4   migs/mysql-5.7:latest                                                           "docker-entrypoint.s…"   4 minutes ago   Up 4 minutes   0.0.0.0:3306->3306/tcp, :::3306->3306/tcp        laravel-docker-desafio-tecnico-problem_mysql-laravel-docker-desafio-tecnico_1
+
 ```
 
-- Execute os comando logo abaixo na pasta raiz
+- Acesse o da aplicação
+
+```
+root@577187a1bdd4# docker exec -it 050d5e64e543 bash
+```
+
+- Execute os comando logo abaixo na pasta raiz dentro do conteiner
 
 ```
 root@577187a1bdd4# php artisan key:generate
@@ -57,7 +63,7 @@ root@577187a1bdd4# php artisan config:cache
 ## Endereço de Acesso
 
 Acessa um navegador e digita as seguintes url
-- http://localhost:8090/: phpMyAdmin 
-- http://localhost:8088/: Desafio Técnico 
+- http://localhost:8001/: phpMyAdmin 
+- http://localhost:8000/: Desafio Técnico 
 
 
