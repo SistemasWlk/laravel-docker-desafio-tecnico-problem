@@ -21,11 +21,6 @@
 root@577187a1bdd4# git clone https://github.com/SistemasWlk/laravel-docker-desafio-tecnico.git 
 ```
 
-- Acesse o branch master
-
-```
-root@577187a1bdd4# git checkout master 
-```
 
 - Entra na pasta raiz do projeto e executar o seguinte comando
 
