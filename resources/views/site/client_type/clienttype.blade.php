@@ -11,23 +11,25 @@
             <div class="span12">          
                 <div class="widget ">
                     <div class="widget-header">
-                        <h3>Tipo Prova</h3> 
+                        <h3>Tipo Cliente</h3> 
                     </div>  
                     <div class="widget-content">
-                    @if(count($oTipoProvas) > 0) 
+                    @if(count($oClientType) > 0) 
                         <table class="table table-ordered table-hover">
                             <thead>
                                 <tr>
                                     <th>Código</th>
-                                    <th>Km</th>
+                                    <th>Descrição</th>
+                                    <th>Devolução</th>
                                     <!-- <th>Ações</th> -->
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($oTipoProvas as $oTipoProva)
+                                @foreach($oClientType as $ClientType)
                                 <tr>
-                                    <td>{{$oTipoProva->id}}</td>
-                                    <td>{{$oTipoProva->quilometragem}} KM</td>
+                                    <td>{{$ClientType->id}}</td>
+                                    <td>{{$ClientType->description}}</td>
+                                    <td>{{$ClientType->devolution}}</td>
         <!--                             <td>
                                         <a href="" class="btn btn-sm btn-primary">Editar</a>
                                         <a href="" class="btn btn-sm btn-danger">Apagar</a>
@@ -40,7 +42,7 @@
                     </div>
                     <div class="card-footer">
                         <br />
-                        <a href="/tipoprova/create" class="btn btn-sm btn-primary" role="button">Novo Registro</a>
+                        <a href="/clienttype/create" class="btn btn-sm btn-primary" role="button">Novo Registro</a>
                     </div>
                 </div>
             </div>   

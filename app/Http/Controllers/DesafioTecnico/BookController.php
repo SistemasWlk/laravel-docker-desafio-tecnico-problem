@@ -5,8 +5,13 @@ namespace App\Http\Controllers\DesafioTecnico;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Book;
+
 class BookController extends Controller
 {
+
+    private $sMsgErro = "";
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,10 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        $current    = 'book';
+        $oBook      = Book::all();
+        $sMsgErro   = $this->sMsgErro;
+        return view('site.book.book', compact('oBook', 'current', 'sMsgErro'));  
     }
 
     /**
@@ -24,7 +32,9 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        $current  = 'book';
+        $sMsgErro = $this->sMsgErro;
+        return view('site.book.newbook', compact('current', 'sMsgErro'));
     }
 
     /**
@@ -35,7 +45,20 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $current    = 'book';
+        $title      = $request->input('title');
+        $author     = $request->input('author');
+        $pages      = $request->input('pages');
+
+        Book::insert([
+            [
+                'title' => $title,
+                'author' => $author,
+                'pages' => $pages
+            ],
+        ]);
+
+        return $this->index();
     }
 
     /**

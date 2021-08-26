@@ -22,29 +22,34 @@
                         <span style="padding-top: 10px">Dashboard</span>
                     </a> 
                 </li>
-                <li @if($current=="tipoprova") class="active" @else class="" @endif style="height: 40px;">
-                    <a href="/tipoprova">
-                        <span style="padding-top: 10px">Tipo Prova</span>
+                <li @if($current=="problemone") class="active" @else class="" @endif style="height: 40px;">
+                    <a href="/problemone">
+                        <span style="padding-top: 10px">Calculo Idade</span>
                     </a> 
                 </li>
-                <li @if($current=="corredor") class="active" @else class="" @endif style="height: 40px;">
-                    <a href="/corredor">
-                        <span style="padding-top: 10px">Corredor&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <li @if($current=="problemfour") class="active" @else class="" @endif style="height: 40px;">
+                    <a href="/problemfour">
+                        <span style="padding-top: 10px">Sequencia Fibonacci</span>
                     </a> 
                 </li>
-                <li @if($current=="prova") class="active" @else class="" @endif style="height: 40px;">
-                    <a href="/prova">
-                        <span style="padding-top: 10px">Prova&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <li @if($current=="clienttype") class="active" @else class="" @endif style="height: 40px;">
+                    <a href="/clienttype">
+                        <span style="padding-top: 10px">&nbsp;&nbsp;&nbsp;Tipo Cliente&nbsp;&nbsp;&nbsp;</span>
                     </a> 
                 </li>
-                <li @if($current=="corrida") class="active" @else class="" @endif style="height: 40px;">
-                    <a href="/corredorprova">
-                        <span style="padding-top: 10px">Corrida&nbsp;&nbsp;&nbsp;</span>
+                <li @if($current=="client") class="active" @else class="" @endif style="height: 40px;">
+                    <a href="/client">
+                        <span style="padding-top: 10px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cliente&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </a> 
                 </li>
-                <li @if($current == "resultadocorrida") class="active" @else class="" @endif style="height: 40px;">
-                    <a href="/resultadocorredor">
-                        <span style="padding-top: 10px">Resultada Corrida</span>
+                <li @if($current == "book") class="active" @else class="" @endif style="height: 40px;">
+                    <a href="/book">
+                        <span style="padding-top: 10px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Livro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </a> 
+                </li>  
+                <li @if($current == "loan") class="active" @else class="" @endif style="height: 40px;">
+                    <a href="/loan">
+                        <span style="padding-top: 10px">Emprestimo de Livro</span>
                     </a> 
                 </li>    
                 <li style="height: 40px;">

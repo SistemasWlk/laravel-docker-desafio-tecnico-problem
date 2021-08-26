@@ -14,12 +14,14 @@ class CreateLoansTable extends Migration
     public function up()
     {
         Schema::create('loans', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
+            $table->boolean('devolucao')->default(false)->nullable(false);
+            $table->date('date_cad')->nullable(false);
             $table->unsignedBigInteger('id_client')->nullable(false);
             $table->unsignedBigInteger('id_book')->nullable(false);
-            $table->foreign('id_client')->references('id')->on('clients'); 
-            $table->foreign('id_book')->references('id')->on('books');
             $table->timestamps();
+            $table->foreign('id_client')->references('id')->on('clients'); 
+            $table->foreign('id_book')->references('id')->on('books'); 
         });
     }
 

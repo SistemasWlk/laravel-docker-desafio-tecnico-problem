@@ -20,17 +20,21 @@
                             {{$sMsgErro}}
                         </div>
                         @endif
-                        <form action="/tipoprova" method="POST">
+                        <form action="/clienttype" method="POST">
                             {!! csrf_field() !!}
                             <div class="fields">
                                 <div class="field">
-                                    <label for="tipo_corrida">Tipo Corrida</label>
-                                    <input type="number" id="tipo_corrida" name="tipo_corrida" placeholder="KM"/>
+                                    <label for="description">Descrição</label>
+                                    <input type="test" id="description" name="description" placeholder="Descrição"/>
+                                </div>  
+                                <div class="field">
+                                    <label for="devolution">Devolução</label>
+                                    <input type="number" id="devolution" name="devolution" placeholder="Devolução"/>
                                 </div>                                                      
                             </div> 
                             <br /><br />
                             <div class="actions">                             
-                                <button type="button" class="btn btn-primary btn-sm" name="salvatipocorrida" id="salvatipocorrida">Salvar</button>
+                                <button type="button" class="btn btn-primary btn-sm" name="salvatipocliente" id="salvatipocliente">Salvar</button>
                             </div>                               
                         </form>
                     </div>
@@ -46,9 +50,12 @@
 
 @section('javascript')
 <script>
-    $("#salvatipocorrida").click(function(){
-        if ( $('#tipo_corrida').val() == "" ) {
-            alert("Campo tipo corrida obrigatório!"); 
+    $("#salvatipocliente").click(function(){
+        if ( $('#description').val() == "" ) {
+            alert("Campo descrição obrigatório!"); 
+            return false;
+        }else if( $('#devolution').val() == "" ) {
+            alert("Campo devolução obrigatório!"); 
             return false;
         }else{
             $('form').submit();

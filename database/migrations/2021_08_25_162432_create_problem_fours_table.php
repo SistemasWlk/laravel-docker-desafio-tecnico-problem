@@ -14,9 +14,9 @@ class CreateProblemFoursTable extends Migration
     public function up()
     {
         Schema::create('problem_fours', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('sequence_fibonacci')->nullable(false);;
-            $table->text('result_fibonacci')->nullable(false);;
+            $table->bigIncrements('id');
+            $table->text('sequence_fibonacci')->nullable(false);
+            $table->text('result_fibonacci')->nullable(false);
             $table->timestamps();
         });
     }

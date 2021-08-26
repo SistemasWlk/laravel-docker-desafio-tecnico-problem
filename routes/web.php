@@ -16,14 +16,13 @@
 //     //return view('welcome');
 // });
 
-Route::get('/',                          'Site\SiteController@index')->name('principal'); 
-Route::get('resultadocorredororderbyid', 'DesafioTecnico\ResultadoCorredorController@orderByIdade')->name('orderbyidade'); 
+Route::get('/',                             'Site\SiteController@index')->name('principal'); 
+Route::get('resultadocorredororderbyid',    'DesafioTecnico\ResultadoCorredorController@orderByIdade')->name('orderbyidade'); 
 
+Route::resource('problemone',               'DesafioTecnico\ProblemOneController');
+Route::resource('problemfour',              'DesafioTecnico\ProblemFourController');
 
-// Route::resource('corredor',              'DesafioTecnico\CorredorController');
-// Route::resource('prova',                 'DesafioTecnico\ProvaController');
-// Route::resource('corredorprova',         'DesafioTecnico\CorredorProvaController');
-// Route::resource('resultadocorredor',     'DesafioTecnico\ResultadoCorredorController');
-// Route::resource('tipoprova',             'DesafioTecnico\TipoProvaController');
-
-Route::resource('clienttype',             'DesafioTecnico\ClientTypeController');
+Route::resource('clienttype',               'DesafioTecnico\ClientTypeController');
+Route::resource('client',                   'DesafioTecnico\ClientController');
+Route::resource('book',                     'DesafioTecnico\BookController');
+Route::resource('loan',                     'DesafioTecnico\LoanController');

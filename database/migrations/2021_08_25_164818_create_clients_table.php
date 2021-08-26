@@ -14,8 +14,9 @@ class CreateClientsTable extends Migration
     public function up()
     {
         Schema::create('clients', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('cpf', 11)->nullable(false)->unique();
+            $table->string('name', 100)->nullable(false);
             $table->date('birth_date')->nullable(false);
             $table->unsignedBigInteger('id_client_type')->nullable(false);
             $table->foreign('id_client_type')->references('id')->on('client_types');            
